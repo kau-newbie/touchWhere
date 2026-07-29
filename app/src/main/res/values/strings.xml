@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">어디 눌러</string>
+    <string name="tagline">무엇이든 물어보세요!</string>
+    <string name="start_app">안내 시작하기</string>
+    <string name="settings">설정</string>
+    <string name="exit_app">앱 종료하기</string>
+    <string name="app_logo_description">어디 눌러 앱 로고</string>
+    <string name="app_icon_desc">어디 눌러 아이콘</string>
+
+</resources>

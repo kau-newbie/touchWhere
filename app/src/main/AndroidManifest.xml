@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+     대부분 아래 권한들은 final이 붙어있다:
+
+    변수에 사용될 때
+
+        final로 선언된 변수는 한 번만 값을 할당할 수 있습니다.
+
+        예: public static final String ACCESS_FINE_LOCATION = "android.permission.ACCESS_FINE_LOCATION"; → 이 상수는 변경 불가능하며, 앱이 요청할 수 있는 권한 이름을 정의합니다.
+
+    클래스에 사용될 때
+
+        final 클래스는 상속이 불가능합니다.
+
+        예: public final class Manifest.permission → 이 클래스는 더 이상 확장될 수 없으며, 권한 상수만을 담는 용도로 고정되어 있습니다.
+
+    메서드에 사용될 때
+
+        final 메서드는 오버라이드(재정의)할 수 없습니다.
+
+        이는 보안이나 안정성을 위해 특정 동작을 변경하지 못하게 할 때 사용됩니다.
+    -->
+    <!-- 팝업창 띄우는 권한 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 인터넷 연결 상태 파악 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 인터넷 연결 상태 파악 권한 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 녹음 권한 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!--
+Allows an application to read audio files from external storage.
+        external storage란, 사진,음악,다운로드 폴더나 앱 간 공유를 뜻한다.
+    -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <!--
+필요한지 의문
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    -->
+    <!--
+필요한지 의문22
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" /> <!-- uses - xxx 은 전체 애플리케이션에 적용되는 내용이라, 앱 내부 구현에 관계된 <application>안에 넣으시면 안돼요! -->
+    <uses-feature
+        android:name="android.software.metadata.foreground_service"
+        android:required="true" />
+
+    <application
+        android:name=".TouchWhereApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KakaotalkTutorViews"
+        android:largeHeap="true"
+        tools:targetApi="31">
+        <profileable
+            android:shell="true"
+            tools:targetApi="29" />
+        <!-- Activity 등록 -->
+        <!-- activity1 : SplashActivity 등록 (로딩화면) -->
+        <activity
+            android:name=".launcher.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- activity2 : MainActivity 등록 (메인화면) - 오버레이화면 -->
+        <activity
+            android:name=".launcher.MainActivity"
+            android:exported="true" /> <!-- acticity3: SettingActivity 등록 (세팅화면) -->
+        <activity android:name=".launcher.SettingActivity" /> <!-- Service 등록 -->
+        <!-- Service1: OverlayService 등록 -->
+        <service
+            android:name=".feature.overlay.OverlayService"
+            android:foregroundServiceType="specialUse" /> <!-- Service2: MyAccessibilityService 등록 (ui log 받아오는 서비스) -->
+        <!-- 아래 permission은 노란 줄 뜰 텐데, policy에 맞게 잘 쓰라고 경고주는 것일뿐이에요. -->
+        <service
+            android:name=".feature.overlay.MyAccessibilityService"
+            android:exported="false"
+            android:label="UI 이벤트 감지 서비스"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"> <!-- exported는 다른 app에서도 쓸 수 있는지 여부. -->
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <!-- edge device model을 위해 gpu 백엔드를 사용함.-->
+        <uses-native-library android:name="libvndksupport.so" android:required="false"/>
+        <uses-native-library android:name="libOpenCL.so" android:required="false"/>
+    </application>
+
+</manifest>

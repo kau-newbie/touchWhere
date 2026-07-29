@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/ic_launcher_foreground.xml -->
+<!-- Exact same robot as ic_robot.xml, scaled to fit 108x108 adaptive icon -->
+<!-- Scale: 0.72x, offset: +18 on both axes -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Body -->
+    <path
+        android:fillColor="#2C3E6B"
+        android:pathData="M46.8,32.4L61.2,32.4C70.74,32.4,78.48,40.14,78.48,49.68L78.48,58.32C78.48,67.86,70.74,75.6,61.2,75.6L46.8,75.6C37.26,75.6,29.52,67.86,29.52,58.32L29.52,49.68C29.52,40.14,37.26,32.4,46.8,32.4Z" />
+
+    <!-- Left Eye -->
+    <path
+        android:fillColor="#E0E4F0"
+        android:pathData="M42.84,46.44L47.88,46.44C48.87,46.44,49.68,47.25,49.68,48.24L49.68,50.04C49.68,51.03,48.87,51.84,47.88,51.84L42.84,51.84C41.85,51.84,41.04,51.03,41.04,50.04L41.04,48.24C41.04,47.25,41.85,46.44,42.84,46.44Z" />
+
+    <!-- Right Eye -->
+    <path
+        android:fillColor="#E0E4F0"
+        android:pathData="M60.12,46.44L65.16,46.44C66.15,46.44,66.96,47.25,66.96,48.24L66.96,50.04C66.96,51.03,66.15,51.84,65.16,51.84L60.12,51.84C59.13,51.84,58.32,51.03,58.32,50.04L58.32,48.24C58.32,47.25,59.13,46.44,60.12,46.44Z" />
+
+    <!-- Smile -->
+    <path
+        android:strokeColor="#E0E4F0"
+        android:strokeWidth="1.8"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M45.36,58.32C48.24,62.64,59.76,62.64,62.64,58.32" />
+
+    <!-- Crown dot left -->
+    <path
+        android:fillColor="#F4C84B"
+        android:fillAlpha="0.9"
+        android:pathData="M46.8,26.64C46.8,28.22,45.52,29.52,43.92,29.52C42.34,29.52,41.04,28.22,41.04,26.64C41.04,25.06,42.34,23.76,43.92,23.76C45.52,23.76,46.8,25.06,46.8,26.64Z" />
+
+    <!-- Crown dot center -->
+    <path
+        android:fillColor="#FFD95A"
+        android:pathData="M57.6,23.76C57.6,25.75,55.99,27.36,54,27.36C52.01,27.36,50.4,25.75,50.4,23.76C50.4,21.77,52.01,20.16,54,20.16C55.99,20.16,57.6,21.77,57.6,23.76Z" />
+
+    <!-- Crown dot right -->
+    <path
+        android:fillColor="#F4C84B"
+        android:fillAlpha="0.9"
+        android:pathData="M66.96,26.64C66.96,28.22,65.66,29.52,64.08,29.52C62.5,29.52,61.2,28.22,61.2,26.64C61.2,25.06,62.5,23.76,64.08,23.76C65.66,23.76,66.96,25.06,66.96,26.64Z" />
+
+</vector>

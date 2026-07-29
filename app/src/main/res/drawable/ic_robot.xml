@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/ic_robot.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="90dp"
+    android:height="90dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Body -->
+    <path
+        android:fillColor="#2C3E6B"
+        android:pathData="M16,44C16,30.75 26.75,20 40,20L60,20C73.25,20 84,30.75 84,44L84,56C84,69.25 73.25,80 60,80L40,80C26.75,80 16,69.25 16,56Z" />
+
+    <!-- Left Eye -->
+    <path
+        android:fillColor="#E0E4F0"
+        android:pathData="M32,42C32,40.62 33.12,39.5 34.5,39.5L41.5,39.5C42.88,39.5 44,40.62 44,42L44,44.5C44,45.88 42.88,47 41.5,47L34.5,47C33.12,47 32,45.88 32,44.5Z" />
+
+    <!-- Right Eye -->
+    <path
+        android:fillColor="#E0E4F0"
+        android:pathData="M56,42C56,40.62 57.12,39.5 58.5,39.5L65.5,39.5C66.88,39.5 68,40.62 68,42L68,44.5C68,45.88 66.88,47 65.5,47L58.5,47C57.12,47 56,45.88 56,44.5Z" />
+
+    <!-- Smile -->
+    <path
+        android:strokeColor="#E0E4F0"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M38,56Q50,64 62,56" />
+
+    <!-- Crown dot left -->
+    <path
+        android:fillColor="#F4C84B"
+        android:pathData="M36,12A4,4 0,1 1,36.01,12Z"
+        android:fillAlpha="0.9" />
+
+    <!-- Crown dot center -->
+    <path
+        android:fillColor="#FFD95A"
+        android:pathData="M50,8A5,5 0,1 1,50.01,8Z" />
+
+    <!-- Crown dot right -->
+    <path
+        android:fillColor="#F4C84B"
+        android:pathData="M64,12A4,4 0,1 1,64.01,12Z"
+        android:fillAlpha="0.9" />
+
+</vector>
